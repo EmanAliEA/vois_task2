@@ -3,7 +3,7 @@ import TagItem from "./TagItem";
 import Button from "../ui/Button";
 import { Link } from "react-router-dom";
 
-// post -> title , id, content, author,date ,image ,tags ,
+// post -> title , id, content, author,date ,image ,tags
 function PostItem({ post, styleLi = "" }) {
   const style = "flex flex-col gap-3";
 
