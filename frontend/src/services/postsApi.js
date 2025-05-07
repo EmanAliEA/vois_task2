@@ -43,6 +43,7 @@ export function formatDate(date) {
 
 export async function getPost(id) {
   try {
+    console.log("get post ");
     const response = await fetch(`${URL}/${id}`); // Construct URL with ID
     if (!response.ok) {
       const errorData = await response.json();
@@ -58,6 +59,7 @@ export async function getPost(id) {
 
 //{ ...data, id: post.id }
 export async function updatePost({ id, ...post }) {
+  console.log("update function ");
   try {
     // console.log(post, id);
     const response = await fetch(`${URL}/${id}`, {

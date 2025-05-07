@@ -24,7 +24,15 @@ function PostForm({ edit = false, submitFn, post = "" }) {
       <Input defaultValue={post.author} check={true} name="author">
         Author
       </Input>
-      <Input defaultValue={post.image} check={true} name="image">
+      <Input
+        defaultValue={
+          post.image ||
+          "https://th.bing.com/th/id/R.dfc784e9c41f4a1c3953e9466e470c0a?rik=SokVn3DFoqU%2fgw&riu=http%3a%2f%2fcdn.wallpapersafari.com%2f47%2f28%2fMGoFVr.jpg&ehk=YZtbP%2fDiMcGFlxC4h02p24rhs4qMFnnZPt%2fYkR4GJAw%3d&risl=&pid=ImgRaw&r=0"
+        }
+        isRequired={false}
+        check={true}
+        name="image"
+      >
         Image
       </Input>
       <Input defaultValue={post.date} type="date" check={true} name="date">

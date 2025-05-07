@@ -60,12 +60,7 @@ app.post("/events", async (req, res) => {
     return res.status(400).json({ message: "Event is required" });
   }
 
-  if (
-    !event.title?.trim() ||
-    !event.content?.trim() ||
-    !event.image?.trim() ||
-    !event.author?.trim()
-  ) {
+  if (!event.title?.trim() || !event.content?.trim() || !event.author?.trim()) {
     return res.status(400).json({ message: "Invalid data provided." });
   }
 

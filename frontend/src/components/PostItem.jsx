@@ -20,7 +20,10 @@ function PostItem({ post, styleLi = "" }) {
               ))}
             </div>
             <img
-              src={post.image}
+              src={
+                post.image ||
+                "https://th.bing.com/th/id/R.dfc784e9c41f4a1c3953e9466e470c0a?rik=SokVn3DFoqU%2fgw&riu=http%3a%2f%2fcdn.wallpapersafari.com%2f47%2f28%2fMGoFVr.jpg&ehk=YZtbP%2fDiMcGFlxC4h02p24rhs4qMFnnZPt%2fYkR4GJAw%3d&risl=&pid=ImgRaw&r=0"
+              }
               alt={post.title}
               className="h-full group-hover:scale-125 hover:scale-125 duration-[.5s] transition-all  w-full  cursor-pointer"
             />
@@ -38,7 +41,7 @@ function PostItem({ post, styleLi = "" }) {
                 Read more
               </a>
               {/* <Button style="!px-3 !text-[1rem]">
-                <Link to={`/${post.id}/editPost`}>Edit</Link>
+                <Link to={`/editPost`}>Edit</Link>
               </Button> */}
             </div>
           </div>
