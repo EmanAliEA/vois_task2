@@ -40,10 +40,9 @@ app.get("/events", async (req, res) => {
 
 app.get("/events/:id", async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   const eventsFileContent = await fs.readFile("./data/events.json");
   const events = JSON.parse(eventsFileContent);
-  const event = events.find((event) => event.id === +id);
+  const event = events.find((event) => event.id === id);
 
   if (!event) {
     return res.status(404).json({

@@ -91,7 +91,7 @@ function Login() {
           <textarea
             name="about"
             id="about"
-            placeholder="About"
+            placeholder="Bio"
             rows={3}
             className="resize-none text-gray-500 rounded-[.2rem] border-gray-300 border-1 shadow shadow-sky-900/40 p-1 outline-none"
           ></textarea>

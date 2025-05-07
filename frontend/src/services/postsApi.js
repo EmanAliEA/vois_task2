@@ -27,12 +27,14 @@ export async function addPostApi(post) {
         "Content-Type": "application/json",
       },
     });
-    if (!response.ok) throw new Error("Failed to add New Post");
-    const data = await response.json();
-    console.log("fetch", data);
-    return data;
-  } catch (err) {
-    return err;
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Failed to add new post");
+    }
+    return await response.json(); // Return the parsed response data
+  } catch (error) {
+    console.error("Error in addPostApi:", error.message);
+    throw error; // Re-throw the error for the caller to handle
   }
 }
 
@@ -77,6 +79,21 @@ export async function updatePost({ id, ...post }) {
     return data.event; // Return the updated event
   } catch (error) {
     console.error("Error in updatePost:", error.message);
+    throw error; // Re-throw the error for the caller to handle
+  }
+}
+
+export async function deletePost(id) {
+  try {
+    const response = await fetch(`${URL}/${id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Failed to delete post");
+    }
+  } catch (error) {
+    console.error("Error in deletePost:", error.message);
     throw error; // Re-throw the error for the caller to handle
   }
 }

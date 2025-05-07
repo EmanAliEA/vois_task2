@@ -10,6 +10,7 @@ function NewPost() {
 
   const { mutate } = useMutation({
     mutationFn: (post) => addPostApi(post),
+
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
       alert("success creating new post");
