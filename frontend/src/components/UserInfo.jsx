@@ -25,13 +25,13 @@ function UserInfo() {
           </p>
         </div>
       </div>
-      <div className="ms-4 lg:p-6">
-        <p className="font-semibold text-sm lg:text-xl">About</p>
+      <div className="ms-4 w-full lg:p-6">
+        <p className="font-semibold text-sm lg:text-xl">Bio</p>
         <textarea
           cols={80}
           defaultValue={user.about || "_"}
           rows={user.about ? 2 : 1}
-          className="p-2 resize-none"
+          className="p-2 resize-none w-3/4 lg:w-full"
         ></textarea>
       </div>
     </div>

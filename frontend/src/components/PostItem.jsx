@@ -54,9 +54,9 @@ function PostItem({ post, styleLi = "" }) {
             Read more
           </a>
           <div className="flex gap-2">
-            <Button style="!px-3 !text-[1rem] self-end">
+            {/* <Button style="!px-3 !text-[1rem] self-end">
               <Link to={`/${post.id}/editPost`}>Edit</Link>
-            </Button>
+            </Button> */}
             <Button style="!px-3 !text-[1rem]" onClick={handleDelete}>
               Delete
             </Button>

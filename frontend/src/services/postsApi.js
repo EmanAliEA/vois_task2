@@ -46,12 +46,14 @@ export function formatDate(date) {
 export async function getPost(id) {
   try {
     console.log("get post ");
+    console.log(id, typeof id);
     const response = await fetch(`${URL}/${id}`); // Construct URL with ID
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.message || "Failed to fetch post data");
     }
     const data = await response.json();
+    console.log("get post", data);
     return data.event; // Return the specific event
   } catch (error) {
     console.error("Error in getPost:", error.message);
